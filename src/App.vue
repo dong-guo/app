@@ -1,11 +1,17 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <button>
-    <ul>
-      <li><router-link to="/skip">跳转</router-link></li>
-    </ul>
-    </button>
+  
+    
+      <ul>
+        <li>
+          <router-link to="/skip">
+              <button>跳转</button>
+          </router-link>
+        </li>
+      </ul>
+    
+  
   </div>
 </template>
 
@@ -29,22 +35,24 @@ export default{
 
 
 <style scoped>
+   *{
+     margin:0 0;
+     padding:0 0;
+   }
    h1{
      color:purple;
    }
    li{
     list-style-type:none;
+    width:100%;
    }
    a{
      text-decoration:none;
-     margin-left:-40px;
-     line-height:20px;
-
    }
    button{
-     display:inline-block;
-     width:80px;
+     width:100%;
      height:40px;
      border-radius:5px;
+
    }
 </style>

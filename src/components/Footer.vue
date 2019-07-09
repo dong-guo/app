@@ -9,6 +9,7 @@
          </li>
         </ul>
         <p>{{copyright}}</p>
+        
       </div>
   </footer>
 </template>
