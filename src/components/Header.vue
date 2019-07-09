@@ -21,6 +21,7 @@ export default {
   methods:{
     changeTitle:function(){
       this.title1="changed";
+      // this.$emil("ttleChange","子传父")
     }
   }
   

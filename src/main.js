@@ -1,19 +1,22 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
-// import Skip from './components/skip' （跳转放弃）
-// import VueRouter from 'vue-router';
+// import router from './router'   //自带
+import Skip from './components/Skip' 
+import VueRouter from 'vue-router'
+import Home from './components/Home'
 
 Vue.config.productionTip = false
+Vue.use(VueRouter)
 
-// const routes =[
-//   {path:'/',components:App},
-//   {path:'/Skip',components:skip}
-// ]
+//配置路由
+const router = new VueRouter({
+  routes:[
+    {path:"/",component:Home},
+    {path:"/Skip",component:Skip}
+  ],
+  mode:"history"
+})
 
-// const routers = new VueRouter({
-//   routes
-// })
 
 new Vue({
   router,
