@@ -55,7 +55,7 @@ li{
   padding:30px;
   border:1px dotted #222;
   margin:10px;
-  background:url(C:/Users/Administrator/Desktop/app/src/assets/logo.png) no-repeat;
+  background:url(../assets/logo.png) no-repeat;
   background-size:100% 100%;
 }
 </style>
