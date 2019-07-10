@@ -55,6 +55,7 @@ export default{
 
 #skip-mid{
  width:100%;
+ height:100%;
 }
 .rank{
     float:left;
@@ -65,17 +66,20 @@ export default{
     text-align:center;
     box-sizing:border-box;
     background-color:wheat;
+    height:100%;
 }
 #left{
     width:200px;
     background-color:darkkhaki;
     margin-left:-100%;
+    height:100%;
 
 }
 #right{
     width:150px;
     background-color:thistle;
     margin-left:-150px;
+    height:100%;
 }
 #skip-footer{
     clear:both;
