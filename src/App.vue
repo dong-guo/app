@@ -28,8 +28,8 @@ export default{
 
 <style scoped>
    *{
-     margin:0 0;
-     padding:0 0;
+     margin:0px;
+     padding:0px;
    }
    h1{
      color:purple;

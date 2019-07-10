@@ -42,20 +42,20 @@ export default{
 
 <style scoped>
 *{
-    margin:0 0;
-    padding:0 0;
+    margin:0px;
+    padding:0px;
 }
  h1{
     width:100%;
-    height:80px;
+    height:10vh;
     background-color:violet;
     text-align:center;
-    line-height:80px;
+    line-height:10vh;
 }
 
 #skip-mid{
  width:100%;
- height:100%;
+ height:80%;
 }
 .rank{
     float:left;
@@ -72,14 +72,14 @@ export default{
     width:200px;
     background-color:darkkhaki;
     margin-left:-100%;
-    height:100%;
+    height:80%;
 
 }
 #right{
     width:150px;
     background-color:thistle;
     margin-left:-150px;
-    height:100%;
+    height:80%;
 }
 #skip-footer{
     clear:both;
@@ -89,8 +89,10 @@ export default{
     height:100vh;
     width:100%;
 }
-/* html,body{
-    height:500px;
-} */
-
+body{
+    margin:0;
+}
+html{
+    padding:0;
+}
 </style>
