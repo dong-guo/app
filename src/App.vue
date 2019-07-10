@@ -34,5 +34,5 @@ export default{
    h1{
      color:purple;
    }
-   
+
 </style>

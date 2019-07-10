@@ -48,21 +48,27 @@ p{
     width:100%;
     max-width:1200px;
     margin:10px auto;
-    padding:0 5px;
+    /* padding:0 5px; */
     box-sizing:border-box;
   
 }
 li{
     list-style-type:none;
     width:100%;
+    
    }
    a{
      text-decoration:none;
+     display:inline-block;
+     line-height:30px;
+     width:100%;
    }
    button{
      width:100%;
      height:30px;
      border-radius:10px;
-
+     outline:none;
+     background-color:darkseagreen;
    }
+ 
 </style>
