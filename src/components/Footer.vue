@@ -2,14 +2,13 @@
   <footer>
       <div class="foot">
         <ul>
-           <li v-for="user in users" 
-               v-on:click="user.show=!user.show">
-             <h2>{{user.name}}</h2>
-             <h3 v-show="user.show">{{user.position}}</h3>
-         </li>
+           <li>
+             <router-link to="/skip">
+                <button>跳转</button>
+             </router-link>
+           </li>
         </ul>
         <p>{{copyright}}</p>
-        
       </div>
   </footer>
 </template>
@@ -17,7 +16,6 @@
 <script>
 export default {
   name: 'app-footer',
-  props:['users'],
   data(){
     return{
         copyright:"Copyright 2019 vue Demo"
@@ -28,36 +26,43 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+*{
+  margin:0 0;
+  padding:0 0;
+}
 footer{
-    background:#222;
-    padding:6px;
+    background-color:blanchedalmond;
+    padding:2px;
+    border-radius:10px;
+    height:100px;
 }
 p{
-    color:lightgreen;
+    color:chartreuse;
     text-align:center;
+    margin:10px auto;
+    font-size:20px;
+    font-weight:600;
 }
-ul{
-    display:flex;
-    flex-wrap:wrap;
-    list-style-type:none;
-    padding:0;
-}
-li{
-  flex-grow:1;
-  flex-basis:200px;
-  text-align:center;
-  padding:30px;
-  border:1px dotted yellow;
-  margin:10px;
-  background:url(../assets/logo.png) no-repeat;
-  background-size:100% 100%;
-}
+
 .foot{
     width:100%;
     max-width:1200px;
-    margin:40px auto;
-    padding:0 20px;
+    margin:10px auto;
+    padding:0 5px;
     box-sizing:border-box;
+  
 }
+li{
+    list-style-type:none;
+    width:100%;
+   }
+   a{
+     text-decoration:none;
+   }
+   button{
+     width:100%;
+     height:30px;
+     border-radius:10px;
 
+   }
 </style>
