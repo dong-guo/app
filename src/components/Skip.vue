@@ -29,7 +29,7 @@ export default{
   name:'skip',
   data(){
     return{
-        page1:("中间"),
+        page1:("中间好像很吃亏"),
         page2:("在左边"),
         page3:("在右边")
     }
