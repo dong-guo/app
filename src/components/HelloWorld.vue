@@ -4,7 +4,7 @@
       <li> name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input type="text" name="FirstName" value=""> </li>
       <li> passworld:&nbsp; <input type="password" name=LastName value=""></li>
       <li><router-link to="/Home">
-                <button>登录</button>
+                <button>log&nbsp;&nbsp;on</button>
              </router-link>
       </li>
     </ul>  
@@ -28,7 +28,7 @@ export default {
 var myChart = echarts.init(document.getElementById('echartContainer'));
 // 绘制图表
 myChart.setOption({
-    title: { text: 'ECharts 入门示例' },
+    title: { text: 'ECharts 销售数据' },
     tooltip: {},
     xAxis: {
         data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
@@ -70,7 +70,7 @@ button{
   border-radius:8px;
   font-weight:700;
   outline:none;
-  letter-spacing: 15px;
+  /* letter-spacing: 15px; */
   text-align:center;
 }
 #echartContainer{
