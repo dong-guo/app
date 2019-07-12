@@ -9,10 +9,12 @@
          </div>
      </div>
      <div id="left" class="rank">
-         <div id="left-on"><LeftOn v-bind:leftOn="leftOn"></LeftOn></div>
+         <div id="left-on">
+             <!-- <LeftOn></LeftOn> -->
+        </div>
          
          <div id="left-under">
-             {{page22}}
+             
          </div>
      </div>
      <div id="right" class="rank">
@@ -23,7 +25,7 @@
                   <li>{{page33}}</li>
               </ul>
           </div>
-          <div id="right-under">{{page34}}</div>
+          <div id="right-under"></div>
      </div>
     
      <div id="skip-footer">
@@ -37,7 +39,7 @@
 
 <script>
 
-import LeftOn from './table/LeftOn'
+// import LeftOn from './table/LeftOn'
 
 // var echarts = require('echarts')
 
@@ -54,9 +56,9 @@ export default{
         page34:("在右下边")
     }
   },
-  components:{
-      "leftOn":LeftOn
-  }
+//   components:{
+//       "leftOn":LeftOn
+//   }
 //   mounted() {
 //         // 基于准备好的dom，初始化echarts实例
 //         var myChart = echarts.init(document.getElementById('left-on'));
@@ -150,9 +152,17 @@ li{
     /* border:1px solid black; */
     background:url(../assets/images/left1.png) no-repeat;
     background-size:100% 100%;
-    height:250px;
+    height:260px;
     width:290px;
     margin-left:10px;
+}
+#left-under{
+    background:url(../assets/images/left2.png) no-repeat;
+    background-size:100% 100%;
+    height:225px;
+    width:290px;
+    margin-left:10px;
+    margin-top:20px;
 }
 #right{
     width:300px;
@@ -161,8 +171,8 @@ li{
     height:80%;
 }
 #right-on{
-    width:100%;
-    height:210px;
+    width:290px;
+    height:175px;
     /* border:1px solid white; */
     background:url(../assets/images/rightBg.png) no-repeat;
     background-size:100% 100%;
@@ -170,6 +180,13 @@ li{
     font-weight:700;
     overflow:hidden;
     font-size:14px;
+}
+#right-under{
+    background:url(../assets/images/right2.png) no-repeat;
+    background-size:100% 100%;
+    height:310px;
+    width:290px;
+    margin-top:20px;
 }
 #right-on li{
     height:30px;

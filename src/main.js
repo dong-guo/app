@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 // import router from './router'   //自带
-import Skip from './components/Skip' 
+import Skip from './views/Skip' 
 import VueRouter from 'vue-router'
 import Home from './components/Home'
 import HelloWorld from './components/HelloWorld'
@@ -15,7 +15,7 @@ const router = new VueRouter({
   routes:[
     // {path:"/",component:Home},
     {path:"/",component:HelloWorld},
-    {path:"/Skip",component:Skip},
+    {path:"./views/Skip",component:Skip},
     {path:"/Home",component:Home}
   ],
   mode:"history"

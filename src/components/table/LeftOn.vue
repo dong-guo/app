@@ -63,9 +63,9 @@ export default{
 
 
 <style scoped>
-#left-on{
+#LeftOn{
     border:1px solid black;
-    /* background:url(../src/assets/images/left1.png) no-repeat;
+    /* background:url(../../assets/images/left1.png) no-repeat;
     background-size:100% 100%; */
     height:240px;
     width:280px;

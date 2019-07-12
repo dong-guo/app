@@ -3,7 +3,7 @@
       <div class="foot">
         <ul>
            <li>
-             <router-link to="/skip">
+             <router-link to="./views/skip">
                 <button>跳转</button>
              </router-link>
            </li>
