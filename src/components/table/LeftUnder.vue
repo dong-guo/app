@@ -1,5 +1,5 @@
 <template>
-         <div id="LeftOn"></div>      
+         <div id="LeftUnder"></div>      
 </template>
 
 
@@ -19,7 +19,7 @@ export default{
   },
   mounted() {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('LeftOn'));
+        var myChart = echarts.init(document.getElementById('LeftUnder'));
         myChart.setOption ({
             xAxis: {
                 type: 'category',
@@ -63,11 +63,11 @@ export default{
 
 
 <style scoped>
-#LeftOn{
-    /* border:1px solid black; */
+#LeftUnder{
+    border:1px solid black;
     /* background:url(../../assets/images/left1.png) no-repeat;
     background-size:100% 100%; */
-    height:260px;
+    height:225px;
     width:290px;
     /* margin-left:10px; */
 
