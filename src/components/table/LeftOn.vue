@@ -1,5 +1,5 @@
 <template>
-         <div id="leftOn"></div>      
+         <div id="LeftOn"></div>      
 </template>
 
 
@@ -9,7 +9,7 @@
 var echarts = require('echarts')
 
 export default{
-  name:'leftOn',
+  name:'LeftOn',
   data(){
     return{
         page31:("床垫销售额"),
@@ -19,7 +19,7 @@ export default{
   },
   mounted() {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('leftOn'));
+        var myChart = echarts.init(document.getElementById('LeftOn'));
         myChart.setOption ({
             xAxis: {
                 type: 'category',
@@ -65,10 +65,10 @@ export default{
 <style scoped>
 #left-on{
     border:1px solid black;
-    background:url(../assets/images/left1.png) no-repeat;
-    background-size:100% 100%;
-    height:250px;
-    width:290px;
+    /* background:url(../src/assets/images/left1.png) no-repeat;
+    background-size:100% 100%; */
+    height:240px;
+    width:280px;
     margin-left:10px;
 
 }

@@ -9,8 +9,8 @@
          </div>
      </div>
      <div id="left" class="rank">
-         <!-- <div id="left-on"></div> -->
-         <leftOn v-bind:leftOn="leftOn"></leftOn>
+         <div id="left-on"><LeftOn v-bind:leftOn="leftOn"></LeftOn></div>
+         
          <div id="left-under">
              {{page22}}
          </div>
@@ -146,14 +146,14 @@ li{
     margin-left:-100%;
     height:80%;
 }
-/* #left-on{
-    border:1px solid black;
+#left-on{
+    /* border:1px solid black; */
     background:url(../assets/images/left1.png) no-repeat;
     background-size:100% 100%;
     height:250px;
     width:290px;
     margin-left:10px;
-} */
+}
 #right{
     width:300px;
     background-color:thistle;
