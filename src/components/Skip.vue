@@ -9,13 +9,21 @@
          </div>
      </div>
      <div id="left" class="rank">
-         <div class="left-on" id="echartContainer" style="width:250px; height:250px"></div>
+         <!-- <div id="left-on"></div> -->
+         <leftOn v-bind:leftOn="leftOn"></leftOn>
          <div id="left-under">
              {{page22}}
          </div>
      </div>
      <div id="right" class="rank">
-          <p>{{page3}}</p>
+          <div id="right-on">
+              <ul>
+                  <li>{{page31}}</li>
+                  <li>{{page32}}</li>
+                  <li>{{page33}}</li>
+              </ul>
+          </div>
+          <div id="right-under">{{page34}}</div>
      </div>
     
      <div id="skip-footer">
@@ -29,7 +37,9 @@
 
 <script>
 
-var echarts = require('echarts')
+import LeftOn from './table/LeftOn'
+
+// var echarts = require('echarts')
 
 export default{
   name:'skip',
@@ -38,29 +48,55 @@ export default{
         page1:("中间好像很吃亏"),
         page21:("在左上边"),
         page22:("在左下边"),
-        page3:("在右边")
+        page31:("床垫销售额"),
+        page32:("床品销售额"),
+        page33:("床架销售额"),
+        page34:("在右下边")
     }
   },
-  mounted() {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echartContainer'));
-        myChart.setOption = {
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-            },
-            yAxis: {
-                type: 'value'
-            },
-            series: [{
-                data: [820, 932, 901, 934, 1290, 1330, 1320],
-                type: 'line',
-                areaStyle: {}
-            }]
-        }
-    }
-  
+  components:{
+      "leftOn":LeftOn
+  }
+//   mounted() {
+//         // 基于准备好的dom，初始化echarts实例
+//         var myChart = echarts.init(document.getElementById('left-on'));
+//         myChart.setOption ({
+//             xAxis: {
+//                 type: 'category',
+//                 boundaryGap: false,
+//                 data: ['1月', '2月', '3月', '4月', '5月']
+//             },
+//             yAxis: {
+//                 type: 'value'
+//             },
+//             series: [{
+//                 data: [320, 398, 370, 440, 580],
+//                 type: 'line',
+//                 areaStyle: {}
+//             }],
+//             grid:[{
+//                 left:'15%',
+//                 bottom:'15%',
+//                 top:'20%',
+//                 right:'10%'
+//             }],
+//             color:{
+//                 //线性渐变
+//                 type:'linear',
+//                 x:0,
+//                 y:0,
+//                 x2:1,
+//                 y2:1,
+//                 colorStop:[{
+//                     offset:0,color:'red'
+//                 },{
+//                     offset:1,color:'blue'
+//                 }],
+//                 globalCoord:false
+//             }
+
+//         })
+//    } 
 }
 </script>
 
@@ -70,6 +106,9 @@ export default{
 *{
     margin:0px;
     padding:0px;
+}
+li{
+    list-style-type:none;
 }
  #skip-header h1{
     width:100%;
@@ -107,14 +146,35 @@ export default{
     margin-left:-100%;
     height:80%;
 }
-.left-on{
+/* #left-on{
     border:1px solid black;
-}
+    background:url(../assets/images/left1.png) no-repeat;
+    background-size:100% 100%;
+    height:250px;
+    width:290px;
+    margin-left:10px;
+} */
 #right{
     width:300px;
     background-color:thistle;
     margin-left:-300px;
     height:80%;
+}
+#right-on{
+    width:100%;
+    height:210px;
+    /* border:1px solid white; */
+    background:url(../assets/images/rightBg.png) no-repeat;
+    background-size:100% 100%;
+    color:white;
+    font-weight:700;
+    overflow:hidden;
+    font-size:14px;
+}
+#right-on li{
+    height:30px;
+    margin:30px 0;
+    margin-left:20px;
 }
 #skip-footer{
     clear:both;
