@@ -5,7 +5,7 @@
      </div>
      <div id="skip-mid" class="rank">
          <div id="center">
-                <p>{{page1}}</p>
+                <World />
          </div>
      </div>
      <div id="left" class="rank">
@@ -41,6 +41,8 @@
 
 import LeftOn from '../components/table/LeftOn'
 import LeftUnder from '../components/table/LeftUnder'
+import World from '../components/World'
+
 // var echarts = require('echarts')
 
 export default{
@@ -58,7 +60,8 @@ export default{
   },
   components:{
       "LeftOn":LeftOn,
-      "LeftUnder":LeftUnder
+      "LeftUnder":LeftUnder,
+      "World": World
   }
  
 }
