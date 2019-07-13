@@ -14,7 +14,7 @@
         </div>
          
          <div id="left-under">
-             
+             <LeftUnder></LeftUnder>
          </div>
      </div>
      <div id="right" class="rank">
@@ -25,7 +25,9 @@
                   <li>{{page33}}</li>
               </ul>
           </div>
-          <div id="right-under"></div>
+          <div id="right-under">
+              <RightUnder></RightUnder>
+          </div>
      </div>
     
      <div id="skip-footer">
@@ -42,6 +44,7 @@
 import LeftOn from '../components/table/LeftOn'
 import LeftUnder from '../components/table/LeftUnder'
 // var echarts = require('echarts')
+import RightUnder from '../components/table/RightUnder'
 
 export default{
   name:'skip',
@@ -58,7 +61,8 @@ export default{
   },
   components:{
       "LeftOn":LeftOn,
-      "LeftUnder":LeftUnder
+      "LeftUnder":LeftUnder,
+      "RightUnder":RightUnder
   }
  
 }
@@ -101,7 +105,7 @@ li{
     margin-left:300px;
     text-align:center;
     box-sizing:border-box;
-    background-color:wheat;
+    /* background-color:wheat; */
     height:100%;
 }
 #left{
