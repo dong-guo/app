@@ -24,21 +24,21 @@ export default{
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                //轴
+                //X轴
                 axisLine:{
                     show:false
                 },
-                //轴刻度
+                //X轴刻度
                 axisTick:{
                     show:false
                 },
-                //刻度标签
+                //X刻度标签
                 axisLabel:{
                     color:'white',
                     fontSize:12,
                     
                 },
-                //分隔线
+                //X分隔线
                 splitLine:{
                     show:false
                 },
@@ -50,6 +50,7 @@ export default{
                     show:true,
                     lineStyle:{
                         color:'rgba(47,95,233,1)',
+                        opacity:0.4,
                         width:1
                     },
                     type:'dotted'
@@ -76,7 +77,7 @@ export default{
                 data: [320, 398, 370, 440, 580],
                 symbolSize:10,
                 type: 'line',
-                areaStyle: {},
+                //图形文本标签
                 label:{
                     show:true,
                     position:'right',
@@ -96,10 +97,12 @@ export default{
                         },{offset:1,color:'rgba(0,122,255,0)'
                         }],
                         global:false
-                    }
+                    },
+                    opacity:0.5,
                },
+               //拐点标志
                itemStyle:{
-                    color:'blue',
+                    color:'rgba(95,187,240,1)',
                     
                 },
             }],

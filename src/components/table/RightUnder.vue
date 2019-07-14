@@ -59,10 +59,12 @@ export default{
                 axisLabel:{
                     color:'white'
                 },
+                //X分隔线
                 splitLine:{
                     show:true,
                     lineStyle:{
                         color:'rgba(47,95,233,1)',
+                        opacity:0.4,
                         width:1
                     },
                     type:'dotted'

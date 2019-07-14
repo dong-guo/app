@@ -25,13 +25,14 @@ export default{
                trigger: 'none',
                formatter: "{a} <br/>{b}:{c}({d}%)"
             },
+            //标题
             legend: {
                 orient: 'horizontal',
                 align:'left',
                 y: 'bottom',
                 icon: "circle",
-                itemWidth:4,
-                itemHeight:4,
+                itemWidth:5,
+                itemHeight:5,
                 textStyle:{
                     color:'white'
                 },
@@ -41,14 +42,21 @@ export default{
                 {
                     name:'访问来源',
                     type:'pie',
-                    minShowLabelAngle:60,
+                    minShowLabelAngle:8,
                     // hoverOffset:2,
                     hoverAnimation:false,
                     radius: ['23%', '35%'],
                     avoidLabelOverlap: false,
+                    
+                    //文本标签
                     label: {
                         normal: {
                             show: true,
+                            // show:function(){
+                            //     if(data.percent>10){
+                            //         return ture
+                            //     }
+                            // },
                             position:'outer',
                             borderWidth:2,
                             borderRadiu:2,
@@ -56,7 +64,12 @@ export default{
                             lineStyle:{
                                 color:'#333'
                             },
-                            formatter:'{b} {d}%'
+                            formatter:function(data){
+                                console.log(data)
+                                return data.name +" "+ data.percent.toFixed(0)+"%"
+                            }
+
+                            // formatter:'{b} {d}%'
                         },
                         emphasis: {
                             show: true,
@@ -66,6 +79,7 @@ export default{
                             }
                         }
                     },
+                    //文本标签引导线
                     labelLine: {
                         normal: {
                             show:true,
@@ -74,17 +88,17 @@ export default{
                         }
                     },
                     data:[
-                        {value:90, name:'0769'},
+                        {value:60, name:'0769'},
                         {value:90, name:'3D      '},
                         {value:100, name:'歌蒂娅'},
-                        {value:100, name:'凯奇'},
-                        {value:100, name:'助眠'},
-                        {value:100, name:'V6'},
-                        {value:100, name:'0760'},
-                        {value:100, name:'PAULY'},
+                        {value:150, name:'凯奇'},
+                        {value:120, name:'助眠'},
+                        {value:200, name:'V6'},
+                        {value:300, name:'0760'},
+                        {value:200, name:'PAULY'},
                         {value:100, name:'HOME'},
-                        {value:100, name:'国际'},
-                        {value:100, name:'兰博基尼'},
+                        {value:10, name:'国际'},
+                        {value:10, name:'兰博基尼'},
                     ]
                 }
             ],
