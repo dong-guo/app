@@ -24,36 +24,92 @@ export default{
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
+                //轴
+                axisLine:{
+                    show:false
+                },
+                //轴刻度
+                axisTick:{
+                    show:false
+                },
+                //刻度标签
+                axisLabel:{
+                    color:'white',
+                    fontSize:12,
+                    
+                },
+                //分隔线
+                splitLine:{
+                    show:false
+                },
                 data: ['1月', '2月', '3月', '4月', '5月']
             },
             yAxis: {
-                type: 'value'
+                type: 'value',
+                splitLine:{
+                    show:true,
+                    lineStyle:{
+                        color:'rgba(47,95,233,1)',
+                        width:1
+                    },
+                    type:'dotted'
+                },
+                axisTick:{
+                        show:false,
+                        // color:'green',
+                        lineStyle:{
+                            color:'blue'
+                        }
+                },
+                axisLine:{
+                        show:false,
+                        lineStyle:{
+                            color:'white',
+                            width:1,
+                            fontSize:18,
+                            type:'dotted'
+                        }
+                }       
             },
+
             series: [{
                 data: [320, 398, 370, 440, 580],
+                symbolSize:10,
                 type: 'line',
-                areaStyle: {}
+                areaStyle: {},
+                label:{
+                    show:true,
+                    position:'right',
+                    color:'white',
+                    position:'top',
+                    fontSize:'9'
+                },
+                //区域填充
+               areaStyle:{
+                  color:{
+                        type:'linear',
+                        x:0,
+                        y:0,
+                        x2:0,
+                        y2:1,colorStops:[{
+                            offset:0,color:'rgba(0,122,255,1)'
+                        },{offset:1,color:'rgba(0,122,255,0)'
+                        }],
+                        global:false
+                    }
+               },
+               itemStyle:{
+                    color:'blue',
+                    
+                },
             }],
             grid:[{
                 left:'15%',
                 bottom:'15%',
                 top:'20%',
-                right:'10%'
+                right:'5%'
             }],
-            color:{
-                //线性渐变
-                type:'linear',
-                x:0,
-                y:0,
-                x2:1,
-                y2:1,
-                colorStop:[{
-                    offset:0,color:'red'
-                },{
-                    offset:1,color:'blue'
-                }],
-                globalCoord:false
-            }
+            
 
         })
    } 

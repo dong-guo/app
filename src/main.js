@@ -15,7 +15,7 @@ const router = new VueRouter({
   routes:[
     // {path:"/",component:Home},
     {path:"/",component:HelloWorld},
-    {path:"/views/Skip",component:Skip},
+    {path:"/Skip",component:Skip},
     {path:"/Home",component:Home}
   ],
   mode:"history"

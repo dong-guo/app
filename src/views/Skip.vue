@@ -134,7 +134,7 @@ li{
 }
 #right{
     width:300px;
-    background-color:thistle;
+    /* background-color:thistle; */
     margin-left:-300px;
     height:80%;
 }
@@ -165,10 +165,10 @@ li{
     clear:both;
 }
 #p-body{
-    min-width:400px;
+    min-width:650px;
     height:100vh;
     width:100%;
-    background:rgb(15, 15, 70);
+    background:rgba(3, 6, 27,1);
 }
 body{
     margin:0;

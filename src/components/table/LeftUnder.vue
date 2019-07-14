@@ -41,7 +41,7 @@ export default{
                 {
                     name:'访问来源',
                     type:'pie',
-                    minShowLabelAngle:100,
+                    minShowLabelAngle:60,
                     // hoverOffset:2,
                     hoverAnimation:false,
                     radius: ['23%', '35%'],
