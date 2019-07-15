@@ -63,7 +63,7 @@ export default {
   /* padding-top:100px; */
   /* background:url(../assets/images/world.png) no-repeat;
   background-size:100% 100%; */
-  border:1px solid green;
+  /* border:1px solid green; */
 }
 
 </style>

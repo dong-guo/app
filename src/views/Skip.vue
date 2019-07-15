@@ -350,7 +350,7 @@ li{
   position:absolute;
 }
 #p-body{
-    min-width:650px;
+    min-width:950px;
     height:1080px;
     width:1920px;
     background:rgba(3, 6, 27,1);
