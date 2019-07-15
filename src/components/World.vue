@@ -1,6 +1,7 @@
 <template>
-  <div id="world">
-    <!-- world -->
+      <div id="world">
+        <!-- world -->
+         
   </div>
 </template>
 
@@ -26,10 +27,18 @@ export default {
       let option = {
         series: {
           type: 'map',
-          top: 0,
-          left: 0,
-          zoom: 0.9,
-          map: 'world'
+          top: 50,
+          left:90,
+          zoom: 1.2,
+          map: 'world',
+          itemStyle:{
+            areaColor:'rgba(32,63,158,1)',
+            borderWidth:0,
+          },
+        },
+        grid:{
+          left:'0%',
+          top:'0%'
         }
       };
       // var myChart = echarts.init(document.getElementById('main'));
@@ -47,8 +56,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #world{
-  width: 100%;
-  height: 100%;
-  /* background: red; */
+  width: 875px;
+  height: 471px;
+  margin-left:64px;
+  margin-top:85px;
+  /* padding-top:100px; */
+  /* background:url(../assets/images/world.png) no-repeat;
+  background-size:100% 100%; */
+  border:1px solid green;
 }
+
 </style>

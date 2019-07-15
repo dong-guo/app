@@ -35,21 +35,22 @@ export default{
                 }
             },
             legend: {
-                data: [ '单位：万元'],
+                data: [ '(单位：万元)'],
                 icon:'none',
                 show:true,
                 textStyle:{
                     color:'white',
-                    fontSize:8
+                    fontSize:14
                 },
-                left:'70',
-                top:'3'
+                left:'110',
+                top:'15'
             },
            
             xAxis: {
                 type: 'value',
                 show:true,
                 boundaryGap: [0, 0.01],
+            
                 axisLine:{
                     show:false
                 },
@@ -105,7 +106,7 @@ export default{
             series: [
                 
                 {
-                    name: '单位：万元',
+                    name: '(单位：万元)',
                     type: 'bar',
                     label:{
                        show:true,
@@ -121,9 +122,9 @@ export default{
                 }
             ],
             grid:[{
-                left:'28%',
+                left:'20%',
                 bottom:'10%',
-                top:'25%',
+                top:'18%',
                 right:'7%'
             }]
         })
@@ -138,8 +139,8 @@ export default{
     /* border:1px solid black; */
     /* background:url(../../assets/images/left1.png) no-repeat;
     background-size:100% 100%; */
-    height:310px;
-    width:290px;
+    height:556px;
+    width:420px;
     /* margin-left:10px; */
 
 }

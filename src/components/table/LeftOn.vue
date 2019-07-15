@@ -107,10 +107,10 @@ export default{
                 },
             }],
             grid:[{
-                left:'15%',
-                bottom:'15%',
-                top:'20%',
-                right:'5%'
+                left:'10%',
+                bottom:'10%',
+                top:'18%',
+                right:'4%'
             }],
             
 
@@ -126,8 +126,11 @@ export default{
     /* border:1px solid black; */
     /* background:url(../../assets/images/left1.png) no-repeat;
     background-size:100% 100%; */
-    height:260px;
-    width:290px;
+    height:452px;
+    width:402px;
+    /* padding-left:19px;
+    padding-top:100px;
+    padding-bottom:53px; */
     /* margin-left:10px; */
 
 }
