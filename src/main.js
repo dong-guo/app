@@ -5,10 +5,13 @@ import Skip from './views/Skip'
 import VueRouter from 'vue-router'
 import Home from './components/Home'
 import HelloWorld from './components/HelloWorld'
-
+//接口引入
+import axios from "axios"
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+//接口注册
+Vue.prototype.$axios = axios;
 
 //配置路由
 const router = new VueRouter({

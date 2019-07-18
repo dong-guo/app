@@ -1,25 +1,66 @@
 <template>
-         <div id="RightUnder"></div>      
+         <div id="RightUnder"></div>  
+          
 </template>
 
 
 
 <script>
 
+
+import axios from 'axios'          
 var echarts = require('echarts')
 
+
 export default{
-  name:'RightUnder',
-  data(){
-    return{
-        page31:("床垫销售额"),
-        page32:("床品销售额"),
-        page33:("床架销售额")
-    }   
+    name:'RightUnder',
+    data(){
+        return{
+            movies:[]
+            
+        }   
+    },
+    created(){
+        this.$axios.get("https://mobiletest.derucci.net/consumer-admin/api/sales/v1/product/list")
+        .then(res=>{
+            this.filterData(res.data);
+            console.log(this.movies)    
+        }) 
+        .catch(error=>{
+            console.log(error);
+        })  
+    },
+    methods:{
+     filterData(data){
+         var pul = [];
+         for (var i=0; i<data.data.length;i++){
+                var moviesObj={
+                    model:data.data[i].model,
+                    qty:data.data[i].qty
+                }
+                pul.push(moviesObj);
+            }
+         this.movies=pul;
+        //  console.log(typeof(movies))
+     }
   },
-  mounted() {
+    mounted() {
+ //实验--------------------------------------------------
+        
+        fetchData(function (data) {
+            myChart.setOption({
+                yAxis: {
+                    data: this.movies.model
+                },
+                series: [{
+                    name: '(单位：万元)',
+                    data: this.movies.qty
+                }]
+            });
+        })
+//实验--------------------------------------------------  
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('RightUnder'));
+        var myChart = echarts.init(document.getElementById('RightUnder')); 
         myChart.setOption({
             title: {
                 text: '',
@@ -89,7 +130,7 @@ export default{
                     show:true,
                     fontWeight:'normal',
                     fontSize:14
-                },
+                }, 
                 axisLine:{
                     show:false,
                     lineStyle:{
@@ -101,7 +142,8 @@ export default{
                     
                 },
                 
-                data: ['BCQ2-060','BCQ2-004','BCQ2-003','BCQ2-002','BCQ2-012','BCQ2-010','BCQ2-060','BCQ2-004','BCQ2-003','BCQ2-002']
+                // data: ['BCQ2-060','BCQ2-004','BCQ2-003','BCQ2-002','BCQ2-012','BCQ2-010','BCQ2-060','BCQ2-004','BCQ2-003','BCQ2-002']
+                data:this.movies.model
             },
             series: [
                 
@@ -118,11 +160,12 @@ export default{
                        barBorderRadius:10,
                     },
                     barWidth:10,
-                    data: [2800, 3000, 3200, 3500, 3800, 4000,4200,4300,4700,5000]
+                    // data: [2800, 3000, 3200, 3500, 3800, 4000,4200,4300,4700,5000]
+                    data:this.movies.qty
                 }
             ],
             grid:[{
-                left:'20%',
+                left:'23%',
                 bottom:'10%',
                 top:'18%',
                 right:'7%'

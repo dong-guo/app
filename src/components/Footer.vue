@@ -31,10 +31,10 @@ export default {
   padding:0 0;
 }
 footer{
-    background-color:blanchedalmond;
+    background-color:rgb(212, 197, 175);
     padding:2px;
     border-radius:10px;
-    height:100px;
+    height:15vh;
 }
 p{
     color:chartreuse;

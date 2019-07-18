@@ -38,4 +38,7 @@ h1{
     color:#222;
     text-align:center;
 }
+header{
+  height:10vh;
+}
 </style>

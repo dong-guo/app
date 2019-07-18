@@ -41,6 +41,8 @@ export default {
     margin:40px auto;
     padding:0 20px;
     box-sizing:border-box;
+    /* background-color:yellow; */
+    height:75vh;
 }
 ul{
     display:flex;
@@ -50,11 +52,11 @@ ul{
 }
 li{
   flex-grow:1;
-  flex-basis:200px;
+  flex-basis:220px;
   text-align:center;
   padding:30px;
   border:1px dotted #222;
-  margin:10px;
+  margin:15px;
   background:url(../assets/logo.png) no-repeat;
   background-size:100% 100%;
 }

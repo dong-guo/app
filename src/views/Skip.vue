@@ -91,15 +91,15 @@ import RightUnder from '../components/table/RightUnder'
 export default{
   name:'skip',
   data(){
-    return{
-        page1:("中间好像很吃亏"),
-        page21:("在左上边"),
-        page22:("在左下边"),
-        page31:("床垫销售额"),
-        page32:("床品销售额"),
-        page33:("床架销售额"),
-        page34:("在右下边")
-    }
+        return{
+            page1:("中间好像很吃亏"),
+            page21:("在左上边"),
+            page22:("在左下边"),
+            page31:("床垫销售额"),
+            page32:("床品销售额"),
+            page33:("床架销售额"),
+            page34:("在右下边")
+        }
   },
   components:{
       "LeftOn":LeftOn,
