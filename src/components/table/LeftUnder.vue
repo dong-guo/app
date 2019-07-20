@@ -25,20 +25,26 @@ export default{
     methods: {
         getData() {
             //请求数据
-            console.log(111)
             this.$axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/brand/sales/proportion')
             .then(res => {
-                console.log(222)
                 let data = res.data.data
-                console.log('请求的数据', data)
+                console.log(data)
                 var myChart = echarts.init(document.getElementById('LeftUnder'))
                 let option = this.createOption()
-                console.log(123, option)
                 myChart.setOption(option)
-			})
+                var name = [];
+                var value = [];
+                for (var i=0;i<data.length;i++){
+                    name.push(data[i].brand);
+                    value.push(data[i].amount);
+                }
+                console.log(name);
+                console.log(value);
+            })
 			.catch(error => {
 				console.log(error);
-			})
+            })
+            
         },
         createOption(){
             return {
@@ -60,7 +66,7 @@ export default{
                         fontSize:14,
                     },
                     data: ['0769','3D','歌蒂娅']
-                    // data:this.moons.name,
+                    // data:this.legendData
                 },
                 series: [
                     {
@@ -103,7 +109,6 @@ export default{
                                 length2:20,
                                 fontWeight:8,
                         },
-                        // data:this.data
                         data:[
                             {
                                 value:300, name:'0769',
@@ -120,7 +125,7 @@ export default{
                             }
                                 
                         ],
-                        // data:this.moons
+                        // data:this.seriesData
                     }
                 ],
                 grid:[{
