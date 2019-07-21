@@ -3,9 +3,9 @@
 </template>
 
 
-
 <script>
 
+import axios from 'axios' 
 var echarts = require('echarts')
 
 export default{
@@ -17,10 +17,30 @@ export default{
         page33:("床架销售额")
     }   
   },
-  mounted() {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('LeftOn'));
-        myChart.setOption ({
+    methods:{
+       getData(){
+           this.$axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/monthly/sales')
+           .then(res=>{
+               let data =res.data.data
+            //    console.log(123,data);
+               let xAxisData=[];
+               let seriesData=[];
+               for(var i=0;i<data.length;i++){
+                   xAxisData.push(data[i].months+'月');
+                   seriesData.push((data[i].amount).toFixed(0));
+               }
+               var myChart = echarts.init(document.getElementById('LeftOn'));
+               let option = this.createOption(xAxisData,seriesData)
+               myChart.setOption(option)
+                // console.log("月份",xAxisData);
+                // console.log("数字",seriesData);
+           })
+           .catch(error=>{
+               console.log(error);
+           })
+       },
+       createOption (xAxisData,seriesData){
+        return{
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
@@ -42,7 +62,8 @@ export default{
                 splitLine:{
                     show:false
                 },
-                data: ['1月', '2月', '3月', '4月', '5月']
+                // data: ["3月", "4月", "5月", "6月", "7月"]
+                data:xAxisData
             },
             yAxis: {
                 type: 'value',
@@ -74,7 +95,8 @@ export default{
             },
 
             series: [{
-                data: [320, 398, 370, 440, 580],
+                // data: [480553195, 316402889, 292713798, 344003941, 67962453],
+                data:seriesData,
                 symbolSize:10,
                 type: 'line',
                 //图形文本标签
@@ -112,9 +134,11 @@ export default{
                 top:'18%',
                 right:'4%'
             }],
-            
-
-        })
+        }
+    },
+    },
+  mounted() {
+      this.getData();
    } 
 }
 </script>

@@ -29,24 +29,25 @@ export default{
             .then(res => {
                 let data = res.data.data
                 console.log(data)
-                var myChart = echarts.init(document.getElementById('LeftUnder'))
-                let option = this.createOption()
-                myChart.setOption(option)
-                var name = [];
-                var value = [];
+                var seriesData=[];
                 for (var i=0;i<data.length;i++){
-                    name.push(data[i].brand);
-                    value.push(data[i].amount);
-                }
-                console.log(name);
-                console.log(value);
+                    let am = data[i].brand
+                    let bm = data[i].amount
+                    seriesData.push({
+                    "name": am,
+                    "value": bm
+                    })
+                }                
+                 console.log('seriesData', seriesData);
+                var myChart = echarts.init(document.getElementById('LeftUnder'))
+                let option = this.createOption(name, seriesData)
+                myChart.setOption(option)
             })
 			.catch(error => {
 				console.log(error);
-            })
-            
+            })   
         },
-        createOption(){
+        createOption(name, seriesData){
             return {
                 tooltip: { 
                 trigger: 'none',
@@ -58,15 +59,15 @@ export default{
                     align:'left',
                     y: 'bottom',
                     icon: "circle",
-                    itemWidth:10,
-                    itemHeight:10,
-                    itemGap:15,
+                    itemWidth:8,
+                    itemHeight:8,
+                    itemGap:10,
                     textStyle:{
                         color:'rgba(187,197,220,1)',
-                        fontSize:14,
+                        fontSize:10,
                     },
-                    data: ['0769','3D','歌蒂娅']
-                    // data:this.legendData
+                    // data: ['0769','3D','歌蒂娅']
+                    data:name
                 },
                 series: [
                     {
@@ -77,7 +78,7 @@ export default{
                         clockwise:false,
                         starAngle:90,
                         hoverAnimation:false,
-                        radius: ['35%', '50%'],
+                        radius: ['20%', '30%'],
                         avoidLabelOverlap: true,
                         
                         //文本标签
@@ -91,7 +92,28 @@ export default{
                             lineStyle:{
                                 color:'#333'
                             },
-                            formatter:'{b} {d}%'
+                            // formatter:'{b} {d}%'
+                            formatter:
+                            function(seriesData){
+                                if(seriesData.percent>8){
+                                    return seriesData.name+" "+seriesData.percent.toFixed(0)+"%"
+                                }else{
+                                    return seriesData.name=""
+                                }
+                            }
+                            // function(){
+                            //     seriesData.sort(function(a,b){
+                            //         if(a.value>b.value){
+                            //             return -1
+                            //         }else if(a.value<b.value){
+                            //             return 1;
+                            //         }
+                            //         return 0;
+                                    
+                            //     }); 
+
+
+                            // }
                         },   
                         //高亮扇区 
                         emphasis: {
@@ -109,30 +131,33 @@ export default{
                                 length2:20,
                                 fontWeight:8,
                         },
-                        data:[
-                            {
-                                value:300, name:'0769',
-                                itemStyle:{color:'rgba(169,89,255,1)'},
-                            },
-                            {
-                                value:1, name:'3D      ',
-                                itemStyle:{color:'rgba(103,89,255,1)'},
+                        // data:[
+                        //     {
+                        //         value:300, 
+                        //         name:'0769',
+                        //         itemStyle:{color:'rgba(169,89,255,1)'},
+                        //     },
+                        //     {
+                        //         value:1, 
+                        //         name:'3D      ',
+                        //         itemStyle:{color:'rgba(103,89,255,1)'},
                             
-                            },
-                            {
-                                value:1, name:'歌蒂娅',
-                                itemStyle:{color:'rgba(89,164,255,1)'},
-                            }
+                        //     },
+                        //     {
+                        //         value:1, 
+                        //         name:'歌蒂娅',
+                        //         itemStyle:{color:'rgba(89,164,255,1)'},
+                        //     }
                                 
-                        ],
-                        // data:this.seriesData
+                        // ],
+                        data:seriesData
                     }
                 ],
                 grid:[{
-                    left:'10%',
+                    left:'15%',
                     bottom:'20%',
-                    top:'12%',
-                    right:'10%'
+                    top:'10%',
+                    right:'25%'
                 }]
 
             }
