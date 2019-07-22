@@ -35,10 +35,23 @@ export default{
                     let bm = data[i].amount
                     seriesData.push({
                     "name": am,
-                    "value": bm
+                    "value": bm,
+                    "labelLine":{show:""}
                     })
-                }                
-                 console.log('seriesData', seriesData);
+                }
+                seriesData.sort(function(a,b){
+                    if(a.value>b.value){
+                        return -1
+                    }else if(a.value<b.value){
+                        return 1;
+                    }
+                    return 0;
+                }); 
+                for(var i=0;i<5;i++){
+                    seriesData[i].labelLine.show=true;
+                }
+                
+                console.log( 999,seriesData);
                 var myChart = echarts.init(document.getElementById('LeftUnder'))
                 let option = this.createOption(name, seriesData)
                 myChart.setOption(option)
@@ -61,7 +74,7 @@ export default{
                     icon: "circle",
                     itemWidth:8,
                     itemHeight:8,
-                    itemGap:10,
+                    itemGap:8,
                     textStyle:{
                         color:'rgba(187,197,220,1)',
                         fontSize:10,
@@ -101,19 +114,6 @@ export default{
                                     return seriesData.name=""
                                 }
                             }
-                            // function(){
-                            //     seriesData.sort(function(a,b){
-                            //         if(a.value>b.value){
-                            //             return -1
-                            //         }else if(a.value<b.value){
-                            //             return 1;
-                            //         }
-                            //         return 0;
-                                    
-                            //     }); 
-
-
-                            // }
                         },   
                         //高亮扇区 
                         emphasis: {
@@ -127,8 +127,8 @@ export default{
                         //文本标签引导线
                         labelLine: {
                                 show:false,
-                                length:20,
-                                length2:20,
+                                length:12,
+                                length2:5,
                                 fontWeight:8,
                         },
                         // data:[
