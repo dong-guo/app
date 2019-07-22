@@ -3,8 +3,8 @@ import App from './App.vue'
 // import router from './router'   //自带
 import Skip from './views/Skip' 
 import VueRouter from 'vue-router'
-import Home from './components/Home'
-import HelloWorld from './components/HelloWorld'
+import Home from './views/Home'
+import HelloWorld from './views/HelloWorld'
 //接口引入
 import axios from "axios"
 

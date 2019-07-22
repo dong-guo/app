@@ -11,9 +11,9 @@
 
 <script>
 //局部注册组件
-import Users from './Users'
-import Header from './Header'
-import Footer from './Footer'
+import Users from '../components/Users'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 // import Skip from './Skip'
 
 export default{

@@ -102,10 +102,10 @@ export default{
                 //图形文本标签
                 label:{
                     show:true,
-                    position:'right',
+                    position:'right', 
                     color:'white',
                     position:'top',
-                    fontSize:'9'
+                    fontSize:'14'
                 },
                 //区域填充
                areaStyle:{
@@ -129,7 +129,7 @@ export default{
                 },
             }],
             grid:[{
-                left:'10%',
+                left:'20%',
                 bottom:'10%',
                 top:'18%',
                 right:'4%'

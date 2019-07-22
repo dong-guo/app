@@ -8,9 +8,10 @@
     <ul>
       <li> name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input type="text" name="FirstName" value=""> </li>
       <li> passworld:&nbsp; <input type="password" name=LastName value=""></li>
-      <li><router-link to="/Home">
-                <button>log&nbsp;&nbsp;on</button>
-             </router-link>
+      <li>
+        <router-link to="/Home">
+           <button>log&nbsp;&nbsp;on</button>
+        </router-link>
       </li>
     </ul>  
     <div id="echartContainer" style="width:500px; height:500px"></div>
