@@ -21,8 +21,8 @@ export default {
     }
   },
   mounted() {
-    axios.get('./geoJson/world.json')
-    // axios.get('https://mobiletest.derucci.net/web/musiBI/geoJson/World.json')
+    // axios.get('./geoJson/world.json')
+    axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/category/sales/amount')
     .then((res) => {
       echarts.registerMap('world', res.data)
       this.myEchart = echarts.init(document.getElementById("world"))
