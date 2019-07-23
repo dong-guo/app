@@ -31,7 +31,7 @@ export default {
           series: {
             type: 'map',
             top: 50,
-            left:90,
+            left: 90,
             zoom: 1.2,
             map: 'world',
             itemStyle:{
