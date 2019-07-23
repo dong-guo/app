@@ -22,10 +22,12 @@ export default {
   },
   mounted() {
     // axios.get('./geoJson/world.json')
-    axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/category/sales/amount')
+    axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/national/sales/amount')
     .then((res) => {
-      echarts.registerMap('world', res.data)
-      this.myEchart = echarts.init(document.getElementById("world"))
+      echarts.registerMap('world', res.data);
+      let data =res.data.data;
+      console.log(222,data);
+      this.myEchart = echarts.init(document.getElementById("world"));
       let option = {
         series: {
           type: 'map',
