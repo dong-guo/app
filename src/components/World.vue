@@ -21,38 +21,38 @@ export default {
     }
   },
   mounted() {
-    // axios.get('./geoJson/world.json')
-    axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/category/sales/amount')
-    .then((res) => {
-      echarts.registerMap('world', res.data)
-      this.myEchart = echarts.init(document.getElementById("world"))
-      let option = {
-        series: {
-          type: 'map',
-          top: 50,
-          left:90,
-          zoom: 1.2,
-          map: 'world',
-          itemStyle:{
-            areaColor:'rgba(32,63,158,1)',
-            borderWidth:0,
+    axios.get('./geoJson/world.json').then((res) => {
+      let worldJson = res.data
+      axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/national/sales/amount').then(res => {
+        console.log('请求地图数据：', res)
+        echarts.registerMap('world', worldJson)
+        this.myEchart = echarts.init(document.getElementById("world"))
+        let option = {
+          series: {
+            type: 'map',
+            top: 50,
+            left:90,
+            zoom: 1.2,
+            map: 'world',
+            itemStyle:{
+              areaColor:'rgba(32,63,158,1)',
+              borderWidth:0,
+            },
           },
-        },
-        grid:{
-          left:'0%',
-          top:'0%'
-        }
-      };
+          grid:{
+            left:'0%',
+            top:'0%'
+          }
+        };
 
-      // var  myChart = echarts.init(document.getElementById('main'));
-	    this.myEchart.setOption(option);
+        // var  myChart = echarts.init(document.getElementById('main'));
+        this.myEchart.setOption(option);
+      })
     })
   },
   methods:{
-    
-
+ 
   }
-  
 }
 </script>
 
