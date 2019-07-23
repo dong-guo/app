@@ -21,7 +21,9 @@ export default {
     }
   },
   mounted() {
-    axios.get('./geoJson/world.json').then((res) => {
+    axios.get('./geoJson/world.json')
+    // axios.get('https://mobiletest.derucci.net/web/musiBI/geoJson/World.json')
+    .then((res) => {
       echarts.registerMap('world', res.data)
       this.myEchart = echarts.init(document.getElementById("world"))
       let option = {
@@ -41,7 +43,8 @@ export default {
           top:'0%'
         }
       };
-      // var myChart = echarts.init(document.getElementById('main'));
+
+      // var  myChart = echarts.init(document.getElementById('main'));
 	    this.myEchart.setOption(option);
     })
   },
@@ -65,5 +68,6 @@ export default {
   background-size:100% 100%; */
   /* border:1px solid green; */
 }
+
 
 </style>

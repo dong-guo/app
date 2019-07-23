@@ -302,20 +302,20 @@ li{
 .picLeft{
   /* border:1px solid black; */
   width:492px;
-  height:176px;
+  height:200px;
   background:url(../assets/images/左上@2x.png) no-repeat;
-  background-size:100% 100%;
+  background-size:80% 90%;
   position:absolute;
-  top:400px;
-  left:540px;
+  top:335px;
+  left:680px;
 }
 .picLeft .picLeft-page{
     height:24px;
-    margin-top:17px;
+    margin-top:21px;
     margin-left:39px;
     /* border:1px solid black; */
     float:left;
-    font-size:21px;
+    font-size:15px;
     color:rgba(255,255,255,1);
     font-family:'DIN-Medium';
     font-weight:500;
@@ -328,11 +328,11 @@ li{
 }
 .picRight .picRight-page{
     height:24px;
-    margin-top:128px;
-    margin-left:108px;
+    margin-top:122px;
+    margin-left:80px;
     /* border:1px solid black; */
     float:left;
-    font-size:21px;
+    font-size:15px;
     color:rgba(255,255,255,1);
     font-family:'DIN-Medium';
     font-weight:500;
@@ -342,9 +342,9 @@ li{
 .picRight{
   /* border:1px solid black; */
   width:410px;
-  height:173px;
+  height:176px;
   background:url(../assets/images/右下@2x.png) no-repeat;
-  background-size:100% 100%;
+  background-size:75% 95%;
   margin-top:-270px;
   margin-left:500px;
   position:absolute;
@@ -354,12 +354,16 @@ li{
     height:1080px;
     width:1920px;
     background:rgba(3, 6, 27,1);
+    margin:0px;
+    padding:0px;
 }
 body{
     margin:0;
-    border:1px solid white;
+    /* border:1px solid white; */
+    padding:0;
 }
 html{
-    padding:0;
+    padding:0 0;
+    margin:0 0;
 }
 </style>

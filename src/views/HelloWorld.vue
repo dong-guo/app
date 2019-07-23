@@ -1,9 +1,8 @@
 <template>
   <div id="helloWorld">
     <div v-for="movie in movies">
-      <p>{{movie.model}}</p>
-      <p>{{movie.qty}}</p>
-      <!-- <img src="{{movie.img}}" alt=""> -->
+      <!-- <p>{{movie.model}}</p>
+      <p>{{movie.qty}}</p> -->
     </div>
     <ul>
       <li> name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<input type="text" name="FirstName" value=""> </li>
@@ -37,8 +36,9 @@ export default {
         this.$axios.get("https://mobiletest.derucci.net/consumer-admin/api/sales/v1/product/list")
         .then(res=>{
             this.filterData(res.data);
-            console.log(this.movies)    
-        }) 
+            console.log(this.movies) 
+                  
+        })
         .catch(error=>{
             console.log(error);
         })  
@@ -56,7 +56,7 @@ export default {
             }
          this.movies=pull;
         //  console.log(typeof(movies))
-     }
+     },
   },
   mounted() {
   function fetchData(cb) {

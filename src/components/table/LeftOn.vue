@@ -105,7 +105,8 @@ export default{
                     position:'right', 
                     color:'white',
                     position:'top',
-                    fontSize:'14'
+                    fontSize:'14',
+                    offset:[0,-8]
                 },
                 //区域填充
                areaStyle:{
