@@ -51,7 +51,7 @@ export default{
                     seriesData[i].labelLine.show=true;
                 }
                 
-                console.log( 999,seriesData);
+                // console.log( 999,seriesData);
                 var myChart = echarts.init(document.getElementById('LeftUnder'))
                 let option = this.createOption(name, seriesData)
                 myChart.setOption(option)

@@ -20,7 +20,7 @@
                  <li class="minBox">9</li>
              </ul>
              <World />
-             <div class="picLeft">
+             <!-- <div class="picLeft">
                 <p class="picLeft-page">
                    澳大利亚:<span>&yen;</span>456,452,120.00
                 </p> 
@@ -29,7 +29,7 @@
                  <p class="picRight-page">
                     中国&nbsp;:&nbsp;<span>&yen;</span>&nbsp;456,452,120.00
                  </p>
-             </div>
+             </div> -->
          </div>
      </div>
      <div id="left" class="rank">
