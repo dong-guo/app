@@ -59,7 +59,7 @@ export default {
           })
         }
         console.log("数据赋值",worldData);
-        echarts.registerMap('worldData', worldJson);
+        echarts.registerMap('world', worldJson);
         this.myEchart = echarts.init(document.getElementById("world"));
         let option = {
             series: {
@@ -121,10 +121,8 @@ export default {
     });
   },
   methods:{
-    
-
+ 
   }
-  
 }
 </script>
 
