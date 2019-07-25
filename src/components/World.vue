@@ -21,24 +21,6 @@ export default {
     }
   },
   mounted() {
-    // 试验不用--------------------------------------------------
-        // function world1(){
-        //   var ppd = new promise(function(resolve,reject){
-        //       axios.get('./geoJson/world.json').then((res) =>{
-        //         let worldJson =res.data
-        //       })
-        //   return ppd;
-        //   })
-        // }
-        // function world2(){
-        //   var ppd = new promise(function(resolve,rejcet){
-        //     axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/national/sales/amount').then((res)=>{
-        //       let data =res.data.data
-        //       console.log(110,data)
-        //   })
-        // },
-     
-
 
     axios.get('./geoJson/world.json').then((res) => {
       let  worldJson = res.data
@@ -48,23 +30,35 @@ export default {
         console.log('数据得到',data)
         let worldData = [];
         for(var i =0; i < data.length; i++){
-          let amount = data[i].amount;
-          let state = data[i].state;
-          worldData.push({
-            "name":state,
-            "value":amount,
-            "label":{
-              show:true,
-            }
-          })
+            let amount = data[i].amount;
+            let state = data[i].state;
+            worldData.push({
+              "name":state,
+              "value":amount,
+              "label":{
+                show:true,
+              },
+              symbolSize:[300,120],
+              label:{
+                color:'white',
+                show:true,
+                position:'insideleft',
+                offset:[30,15],
+                fontSize:18,
+              },
+            })
         }
-        console.log("数据赋值",worldData);
-        echarts.registerMap('world', worldJson);
+        console.log("地图数组",worldData);
+        echarts.registerMap('world', worldJson,);
         this.myEchart = echarts.init(document.getElementById("world"));
         let option = {
             series: {
               type: 'map',
-              data:worldData,
+              data:[],
+              nameMap:{
+                  'china':'中国',
+                  'canada':'加拿大'
+                },     
               top: 50,
               left:90,
               zoom: 1.2,
@@ -75,16 +69,10 @@ export default {
               },
               emphasis:{
                 label:{
-                  z:5,
                   show:true,
                   color:'white',
                   fontWeight:500,
                   fontSzie:18,
-                  // backgroundColor:{
-                  //   image:'../assets/images/左上@2x.png'
-                  // },
-                  // width:197,
-                  // height:200,
                   rich:{},
                 },
                 itemStyle:{
@@ -105,8 +93,20 @@ export default {
                 //  }
               },
               markPoint:{
-                symbol:'circle',
-                symbolSize:[100,170],
+                // symbol:'image://../assets/images/左上@2x.png',
+                
+                // symbolOffset:[0,0],
+                // showAllSymbol:true,
+                // symbolSize:[100,170],
+                emphasis:{
+                    label:{
+                      formatter:'{b}:{c}',
+                      // show:true,
+                    }
+                },
+                data:[]
+                         
+                      
               },
               
             },
@@ -133,10 +133,6 @@ export default {
   height: 471px;
   margin-left:64px;
   margin-top:85px;
-  /* padding-top:100px; */
-  /* background:url(../assets/images/world.png) no-repeat;
-  background-size:100% 100%; */
-  /* border:1px solid green; */
 }
 
 

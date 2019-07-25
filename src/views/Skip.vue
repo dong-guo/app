@@ -124,6 +124,7 @@ li{
  #skip-header{
     width:1920;
     height:107px;
+
     text-align:center;
     line-height:107px;
     background:url(../assets/images/title.png) no-repeat;
@@ -131,7 +132,7 @@ li{
 }
 #skip-footer{
     width:100%;
-    height:0vh;
+    height:0px;
     background-color:violet;
     text-align:center;
     /* line-height:1vh; */
@@ -260,6 +261,7 @@ li{
 }
 .right-on-page2{
     margin-top:48px;
+    /* overflow:hidden; */
     /* border:1px solid black;  */
 }
 #right-on p{
@@ -361,6 +363,7 @@ body{
     margin:0;
     /* border:1px solid white; */
     padding:0;
+    overflow:hidden;
 }
 html{
     padding:0 0;
