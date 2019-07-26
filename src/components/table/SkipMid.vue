@@ -50,7 +50,7 @@ export default{
                let page8 =prr[14];
                let page9 =prr[16];
                let page10 =prr[18];
-               console.log(page2);
+            //    console.log(page2);
                
            })
            .catch(error=>{

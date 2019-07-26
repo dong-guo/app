@@ -7,30 +7,21 @@
          <div id="center">
              <h1>累计销售业绩</h1>
              <ul>
-                 <li class="oneBox"></li>
-                 <li class="minBox"></li>
-                 <li class="minBox"></li>
+                 <li class="oneBox">1</li>
+                 <li class="minBox">9</li>
+                 <li class="minBox">2</li>
                  <li class="space">,</li>
-                 <li class="minBox">4</li>
                  <li class="minBox">5</li>
-                 <li class="minBox">6</li>
+                 <li class="minBox">9</li>
+                 <li class="minBox">3</li>
                  <li class="space">,</li>
-                 <li class="minBox"></li>
-                 <li class="minBox"></li>
-                 <li class="minBox"></li>
+                 <li class="minBox">2</li>
+                 <li class="minBox">7</li>
+                 <li class="minBox">0</li>
+                 <li class="minBox">4</li>
              </ul>
              <!-- <skipMid></skipMid> -->
              <World />
-             <!-- <div class="picLeft">
-                <p class="picLeft-page">
-                   澳大利亚:<span>&yen;</span>456,452,120.00
-                </p> 
-             </div>
-             <div class="picRight">
-                 <p class="picRight-page">
-                    中国&nbsp;:&nbsp;<span>&yen;</span>&nbsp;456,452,120.00
-                 </p>
-             </div> -->
          </div>
      </div>
      <div id="left" class="rank">
@@ -85,28 +76,55 @@
 import LeftOn from '../components/table/LeftOn'
 import LeftUnder from '../components/table/LeftUnder'
 import World from '../components/World'
-
+// import SkipMid from '../components/table/SkipMid'
 // var echarts = require('echarts')
 import RightUnder from '../components/table/RightUnder'
+
+import axios from 'axios' 
+var echarts = require('echarts')
 
 export default{
   name:'skip',
   data(){
-        return{
-            page1:("中间好像很吃亏"),
-            page21:("在左上边"),
-            page22:("在左下边"),
-            page31:("床垫销售额"),
-            page32:("床品销售额"),
-            page33:("床架销售额"),
-            page34:("在右下边")
-        }
+            
+        
+  },
+  methods:{
+     getData(){
+           this.$axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/sales/performance')
+           .then(res=>{
+               let data =res.data.data;
+            //    console.log(typeof(data));
+               data = data.replace(/,/g, "");
+               data = parseInt(data);
+               console.log(110,data);
+               let arr = data.toString();
+              let prr = arr.replace(/\d(?=(?:\d{1})+\b)/g,'$&,');
+               console.log(prr);
+               let page1 =prr[0];
+               let page2 =prr[2];
+               let page3 =prr[4];
+               let page4 =prr[6];
+               let page5 =prr[8];
+               let page6 =prr[10];
+               let page7 =prr[12];
+               let page8 =prr[14];
+               let page9 =prr[16];
+               let page10 =prr[18];
+               console.log(101,page6);
+           })
+
+       },
+  },
+  mounted(){
+    this.getData();
   },
   components:{
       "LeftOn":LeftOn,
       "LeftUnder":LeftUnder,
       "World": World,
-      "RightUnder":RightUnder
+      "RightUnder":RightUnder,
+    //   "SkipMid":SkipMid
   }
  
 }
