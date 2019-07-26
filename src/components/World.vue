@@ -9,6 +9,8 @@
 import axios from 'axios'
 import echarts from 'echarts'
 import leftTopIcon from '../base64/leftTop'
+import rightBotIcon from '../base64/rightBot'
+
 export default {
   name: 'world',
   props:{
@@ -26,30 +28,41 @@ export default {
     axios.get('./geoJson/world.json').then((res) => {
       let  worldJson = res.data
       axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/national/sales/amount').then((res)=>{
-        // console.log('请求地图数据',worldJson)
-        // let data =res.data.data
-        // console.log('数据得到',data)
-        // let worldData = [];
-        // for(var i =0; i < data.length; i++){
-        //     let amount = data[i].amount;
-        //     let state = data[i].state;
-        //     worldData.push({
-        //       "name":state,
-        //       "value":amount,
-        //       "label":{
-        //         show:true,
-        //       },
-        //       symbolSize:[300,120],
-        //       label:{
-        //         color:'white',
-        //         show:true,
-        //         position:'insideleft',
-        //         offset:[30,15],
-        //         fontSize:18,
-        //       },
-        //     })
-        // }
-        // console.log("地图数组",worldData);
+        console.log('请求地图数据',worldJson)
+        let data =res.data.data
+        console.log('数据得到',data)
+        //下面是创建value数组
+        let place=[];
+        let add =[
+         121.77,8.67,17.87,43.35,10.45,101.97,171.12,105.31,104.99,133.77,106.65,-0.26,138.25,53.84,78.96,114.17,116.39,-106.34,-95.71
+        ];
+        let pdd =[
+          12.88,9.08,-11.20,42.31,51.16,4.21,-43.66,61.52,12.56,-25.27,10.78,51.46,36.20,23.42,20.59,22.28,39.90,56.13,37.09
+        ] ; 
+        for(var i=0;i<add.length;i++){
+          place.push([add[i],pdd[i]])
+        }
+          //下面是创建data.name对象
+        let worldData = [];
+        for(var i =0; i < data.length; i++){
+            let amount = data[i].amount;
+            let state = data[i].state;
+            let pl = place[i]
+            worldData.push({
+              "name":state+" : "+amount,
+              "value":pl,
+            symbol: `image://${leftTopIcon}`,
+            symbolSize: [173, 80],
+            label: {
+                    show: true,
+                    position: [30, 10],
+                    color: '#fff',
+                    formatter: `{b}`
+                  }
+            });
+        }
+        console.log("经纬度",place)
+        console.log("地图数组",worldData);
         echarts.registerMap('world', worldJson,);
         this.myEchart = echarts.init(document.getElementById("world"));
         console.log(123123, leftTopIcon)
@@ -131,6 +144,15 @@ export default {
             itemStyle:{
               areaColor:'rgba(32,63,158,1)',
               borderWidth:0,
+            },
+            emphasis:{
+              itemStyle:{
+                areaColor:'green',
+              },
+              label:{
+                fontSize:16,
+                color:'white',
+              }
             }
           },
           series: [
