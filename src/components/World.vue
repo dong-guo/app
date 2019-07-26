@@ -9,6 +9,8 @@
 import axios from 'axios'
 import echarts from 'echarts'
 import leftTopIcon from '../base64/leftTop'
+import rightBotIcon from '../base64/rightBot'
+
 export default {
   name: 'world',
   props:{
@@ -26,33 +28,34 @@ export default {
     axios.get('./geoJson/world.json').then((res) => {
       let  worldJson = res.data
       axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/national/sales/amount').then((res)=>{
-        // console.log('请求地图数据',worldJson)
-        // let data =res.data.data
-        // console.log('数据得到',data)
-        // let worldData = [];
-        // for(var i =0; i < data.length; i++){
-        //     let amount = data[i].amount;
-        //     let state = data[i].state;
-        //     worldData.push({
-        //       "name":state,
-        //       "value":amount,
-        //       "label":{
-        //         show:true,
-        //       },
-        //       symbolSize:[300,120],
-        //       label:{
-        //         color:'white',
-        //         show:true,
-        //         position:'insideleft',
-        //         offset:[30,15],
-        //         fontSize:18,
-        //       },
-        //     })
-        // }
-        // console.log("地图数组",worldData);
+        console.log('请求地图数据',worldJson)
+        let data =res.data.data
+        console.log('数据得到',data)
+        let worldData = [];
+         
+        for(var i =0; i < data.length; i++){
+            let amount = data[i].amount;
+            let state = data[i].state;
+            worldData.push({
+              "name":state+" : "+amount
+            });
+        }
+        let place=[];
+        let add =[
+         121.77,8.67,17.87,43.35,10.45,101.97,171.12,105.31,104.99,133.77,106.65,-0.26,138.25,53.84,78.96,114.17,116.39,-106.34,-95.71
+        ];
+        let pdd =[
+          12.88,9.08,-11.20,42.31,51.16,4.21,-43.66,61.52,12.56,-25.27,10.78,51.46,36.20,23.42,20.59,22.28,39.90,56.13,37.09
+        ] ; 
+        for(var i=0;i<add.length;i++){
+          place.push([add[i],pdd[i]])
+        }
+        console.log("经纬度",place)
+        console.log("地图数组",worldData);
         echarts.registerMap('world', worldJson,);
         this.myEchart = echarts.init(document.getElementById("world"));
-        console.log(123123, leftTopIcon)
+        console.log(123123, leftTopIcon);
+        console.log(909090, rightBotIcon);
         let option = {
           geo: {
             type: 'map',
@@ -65,18 +68,34 @@ export default {
             itemStyle:{
               areaColor:'rgba(32,63,158,1)',
               borderWidth:0,
+            },
+            emphasis:{
+              itemStyle:{
+                areaColor:'green',
+              },
+              label:{
+                fontSize:16,
+                color:'white',
+              }
             }
           },
           series: [
             {
               coordinateSystem: 'geo',
               type: "scatter",
-              symbol: `image://${leftTopIcon}`,
-              symbolSize: [173, 80],
+              // symbolOffset:[],
+              //下两行代码转移到data去------
+              // symbol: `image://${leftTopIcon}`,
+              // symbolSize: [173, 80],
+              
               data:[
                 {
-                  name: '中国:187526',
-                  value: [113.5, 63.48],
+                  symbol: `image://${leftTopIcon}`,
+                  symbolSize: [173, 80],
+                  // name: '中国:187526',
+                  // value: [80.5, 45.9],
+                  name:this.worldData,
+                  value:this.place,
                   label: {
                     show: true,
                     position: [30, 10],
@@ -84,22 +103,24 @@ export default {
                     formatter: `{b}`
                   }
                 },
-                {
-                  name: '澳大利亚:1864',
-                  value: [135.13, -18.3],
-                  label: {
-                    show: true,
-                    position: [30, 10],
-                    color: '#fff',
-                    formatter: `{b}`
-                  }
-                }
+                // {
+                //   symbol: `image://${rightBotIcon}`,
+                //   symbolSize: [173, 80],
+                //   name: '澳大利亚:1864',
+                //   value: [135.13, -18.3],
+                //   label: {
+                //     show: true,
+                //     position: ['30%', '72%'],
+                //     color: '#fff',
+                //     formatter: `{b}`
+                //   }
+                // }
               ],   
             }
           ]
         };
          // var  myChart = echarts.init(document.getElementById('main'));
-         this.myEchart.setOption(option); 
+        this.myEchart.setOption(option); 
       })    
     });
   },
