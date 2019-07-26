@@ -19,7 +19,7 @@
                  <li class="minBox"></li>
                  <li class="minBox"></li>
              </ul> -->
-             <skipMid></skipMid>
+             <!-- <skipMid></skipMid> -->
              <World />
              <!-- <div class="picLeft">
                 <p class="picLeft-page">

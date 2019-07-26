@@ -138,7 +138,7 @@ export default {
         var count = [239583, 129436, 226345, 193745]
         var option = this.setData(obj[0],obj[1], jinweidu[0], jinweidu[1], count[0], count[1])
         this.myEchart.setOption(option)
-        var len = worldData.length
+        var len = obj.length
         var i = 0
          this.timer = setInterval(() => {
            i += 2
