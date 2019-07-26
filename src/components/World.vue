@@ -228,11 +228,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #world{
-  width: 875px;
-  height: 471px;
+  width: 920px;
+  height: 600px;
   margin-left:64px;
   margin-top:85px;
 }
-
-
 </style>
