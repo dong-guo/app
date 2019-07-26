@@ -47,20 +47,21 @@ export default {
         for(var i =0; i < data.length; i++){
             let amount = data[i].amount;
             let state = data[i].state;
-            let pl = place[i]
-            worldData.push({
-              "name":state+" : "+amount,
-              "value":pl,
-            symbol: `image://${leftTopIcon}`,
-            symbolSize: [173, 80],
-            label: {
-                    show: true,
-                    position: [30, 10],
-                    color: '#fff',
-                    formatter: `{b}`
-                  }
-            });
-        }
+            // let pl = place[i]
+            worldData.push([
+              state +" : "+ amount,
+              // "name":state+" : "+amount,
+              // "value":pl,
+            // symbol: `image://${leftTopIcon}`,
+            // symbolSize: [173, 80],
+            // label: {
+            //         show: true,
+            //         position: [30, 10],
+            //         color: '#fff',
+            //         formatter: `{b}`
+            //       }
+            ]);
+          }
         console.log("经纬度",place)
         console.log("地图数组",worldData);
         echarts.registerMap('world', worldJson,);
@@ -111,17 +112,19 @@ export default {
         //     }
         //   ]
         // };
-        var obj = ['中国','印度','西班牙','美国']
-        var option = this.setData(obj[0],obj[1])
+        // var obj = ['中国','印度','西班牙','美国']
+        // var obj = worldData;
+        // console.log(666,obj)
+        var option = this.setData(worldData[0],worldData[1],place[0],place[1])
         this.myEchart.setOption(option)
-        var len = obj.length
+        var len = worldData.length
         var i = 0
          this.timer = setInterval(() => {
            i += 2
             if( i >= len) {
               i = 0
             }
-            option = this.setData(obj[i],obj[i+1])
+            option = this.setData(worldData[i],worldData[i+1],place[i],place[i+1])
             this.myEchart.clear()
             this.myEchart.setOption(option)
         },2000)
@@ -131,16 +134,17 @@ export default {
     });
   },
   methods:{
-    setData(name1,name2) {
+    setData(name1,name2,value1,value2) {
       return  {
           geo: {
             type: 'map',
             map: 'world',
-            zoom: 1,
+            zoom: 1.1,
+            Z:5,
             // roam: true,
-            top: 0,
-            left: 0,
-            right: 0,
+            top: '10%',
+            left: '10%',
+            right: '10%',
             itemStyle:{
               areaColor:'rgba(32,63,158,1)',
               borderWidth:0,
@@ -155,29 +159,38 @@ export default {
               }
             }
           },
+          grid:{
+            left:'1%',
+            rgiht:'1%',
+            top:'12%',
+          },
           series: [
             {
               coordinateSystem: 'geo',
               type: "scatter",
               symbol: `image://${leftTopIcon}`,
-              symbolSize: [173, 80],
+              symbolSize: [250, 120],
               data:[
                 {
                   name: name1,
-                  value: [113.5, 63.48],
+                  value:value1,
+                  // value: [113.5, 63.48],
+                  symbol: `image://${leftTopIcon}`,
                   label: {
                     show: true,
-                    position: [30, 10],
+                    position: ['12%', '12%'],
                     color: '#fff',
                     formatter: `{b}`
                   }
                 },
                 {
                   name: name2,
-                  value: [135.13, -18.3],
+                  value:value2,
+                  // value: [135.13, -18.3],
+                  symbol: `image://${rightBotIcon}`,
                   label: {
                     show: true,
-                    position: [30, 10],
+                    position: ['25%','75%'],
                     color: '#fff',
                     formatter: `{b}`
                   }
@@ -194,10 +207,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #world{
-  width: 875px;
-  height: 471px;
+  width: 920px;
+  height: 600px;
   margin-left:64px;
   margin-top:85px;
+  /* border:1px solid black; */
 }
 
 
