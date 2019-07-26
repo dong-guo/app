@@ -27,7 +27,7 @@ export default{
                let seriesData=[];
                for(var i=0;i<data.length;i++){
                    xAxisData.push(data[i].months+'月');
-                   seriesData.push((data[i].amount).toFixed(0));
+                   seriesData.push((data[i].amount/10000).toFixed(2));
                }
                var myChart = echarts.init(document.getElementById('LeftOn'));
                let option = this.createOption(xAxisData,seriesData)

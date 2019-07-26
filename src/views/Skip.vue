@@ -7,17 +7,17 @@
          <div id="center">
              <h1>累计销售业绩</h1>
              <ul>
-                 <li class="oneBox">2</li>
-                 <li class="minBox">3</li>
-                 <li class="minBox">3</li>
+                 <li class="oneBox"><skipMid>{{page1}}</skipMid></li>
+                 <li class="minBox"></li>
+                 <li class="minBox"></li>
                  <li class="space">,</li>
-                 <li class="minBox">4</li>
-                 <li class="minBox">5</li>
-                 <li class="minBox">6</li>
+                 <li class="minBox"></li>
+                 <li class="minBox"></li>
+                 <li class="minBox"></li>
                  <li class="space">,</li>
-                 <li class="minBox">7</li>
-                 <li class="minBox">8</li>
-                 <li class="minBox">9</li>
+                 <li class="minBox"></li>
+                 <li class="minBox"></li>
+                 <li class="minBox"></li>
              </ul>
              <World />
              <!-- <div class="picLeft">
@@ -84,7 +84,7 @@
 import LeftOn from '../components/table/LeftOn'
 import LeftUnder from '../components/table/LeftUnder'
 import World from '../components/World'
-
+import SkipMid from '../components/table/SkipMid'
 // var echarts = require('echarts')
 import RightUnder from '../components/table/RightUnder'
 
@@ -92,20 +92,15 @@ export default{
   name:'skip',
   data(){
         return{
-            page1:("中间好像很吃亏"),
-            page21:("在左上边"),
-            page22:("在左下边"),
-            page31:("床垫销售额"),
-            page32:("床品销售额"),
-            page33:("床架销售额"),
-            page34:("在右下边")
+            
         }
   },
   components:{
       "LeftOn":LeftOn,
       "LeftUnder":LeftUnder,
       "World": World,
-      "RightUnder":RightUnder
+      "RightUnder":RightUnder,
+      "SkipMid":SkipMid
   }
  
 }
