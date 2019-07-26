@@ -193,7 +193,7 @@ export default {
                   value: jw1,
                   label: {
                     show: true,
-                    position: [26, 9],
+                    position: [23, 9],
                     color: '#fff',
                     formatter: `{b}: ${count1}`
                   }
@@ -211,7 +211,7 @@ export default {
                   value: jw2,
                   label: {
                     show: true,
-                    position: [30, 9],
+                    position: [23, 9],
                     color: '#fff',
                     formatter: `{b}: ${count2}`
                   }
