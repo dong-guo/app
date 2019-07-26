@@ -138,7 +138,7 @@ export default {
         var count = [239583, 129436, 226345, 193745]
         var option = this.setData(obj[0],obj[1], jinweidu[0], jinweidu[1], count[0], count[1])
         this.myEchart.setOption(option)
-        var len = worldData.length
+        var len = obj.length
         var i = 0
          this.timer = setInterval(() => {
            i += 2
@@ -192,14 +192,14 @@ export default {
               coordinateSystem: 'geo',
               type: "scatter",
               symbol: `image://${leftTopIcon}`,
-              symbolSize: [250, 120],
+              symbolSize: [173, 80],
               data:[
                 {
                   name: name1,
                   value: jw1,
                   label: {
                     show: true,
-                    position: [26, 9],
+                    position: [23, 9],
                     color: '#fff',
                     formatter: `{b}: ${count1}`
                   }
@@ -217,7 +217,7 @@ export default {
                   value: jw2,
                   label: {
                     show: true,
-                    position: [30, 9],
+                    position: [23, 9],
                     color: '#fff',
                     formatter: `{b}: ${count2}`
                   }
@@ -240,6 +240,4 @@ export default {
   margin-top:85px;
   /* border:1px solid black; */
 }
-
-
 </style>

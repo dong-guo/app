@@ -11,15 +11,20 @@
                  <li class="minBox"></li>
                  <li class="minBox"></li>
                  <li class="space">,</li>
-                 <li class="minBox"></li>
-                 <li class="minBox"></li>
-                 <li class="minBox"></li>
+                 <li class="minBox">4</li>
+                 <li class="minBox">5</li>
+                 <li class="minBox">6</li>
                  <li class="space">,</li>
                  <li class="minBox"></li>
                  <li class="minBox"></li>
                  <li class="minBox"></li>
+<<<<<<< HEAD
              </ul>
              <skipMid></skipMid>
+=======
+             </ul> -->
+             <!-- <skipMid></skipMid> -->
+>>>>>>> 41ae7f27c686e4fedc353369d3f8b5684054fbbb
              <World />
              <!-- <div class="picLeft">
                 <p class="picLeft-page">
@@ -85,7 +90,7 @@
 import LeftOn from '../components/table/LeftOn'
 import LeftUnder from '../components/table/LeftUnder'
 import World from '../components/World'
-import SkipMid from '../components/table/SkipMid'
+
 // var echarts = require('echarts')
 import RightUnder from '../components/table/RightUnder'
 
@@ -93,15 +98,20 @@ export default{
   name:'skip',
   data(){
         return{
-            
+            page1:("中间好像很吃亏"),
+            page21:("在左上边"),
+            page22:("在左下边"),
+            page31:("床垫销售额"),
+            page32:("床品销售额"),
+            page33:("床架销售额"),
+            page34:("在右下边")
         }
   },
   components:{
       "LeftOn":LeftOn,
       "LeftUnder":LeftUnder,
       "World": World,
-      "RightUnder":RightUnder,
-      "SkipMid":SkipMid
+      "RightUnder":RightUnder
   }
  
 }
@@ -145,7 +155,7 @@ li{
     margin-left:440px;
     text-align:center;
     box-sizing:border-box;
-    /* height:100%; */
+    height:100%;
     background:url(../assets/images/world.png) no-repeat;
     background-size:100% 100%;
 }
