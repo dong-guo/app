@@ -174,7 +174,7 @@ export default {
             },
             emphasis:{
               itemStyle:{
-                areaColor:'green',
+                areaColor:'blue',
               },
               label:{
                 fontSize:16,

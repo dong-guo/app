@@ -6,8 +6,8 @@
      <div id="skip-mid" class="rank">
          <div id="center">
              <h1>累计销售业绩</h1>
-             <!-- <ul>
-                 <li class="oneBox"><skipMid></skipMid></li>
+             <ul>
+                 <li class="oneBox"></li>
                  <li class="minBox"></li>
                  <li class="minBox"></li>
                  <li class="space">,</li>
@@ -18,7 +18,7 @@
                  <li class="minBox"></li>
                  <li class="minBox"></li>
                  <li class="minBox"></li>
-             </ul> -->
+             </ul>
              <skipMid></skipMid>
              <World />
              <!-- <div class="picLeft">
