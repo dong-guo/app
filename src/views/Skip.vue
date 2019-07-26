@@ -150,7 +150,7 @@ li{
     margin-left:440px;
     text-align:center;
     box-sizing:border-box;
-    height:100%;
+    /* height:100%; */
     background:url(../assets/images/world.png) no-repeat;
     background-size:100% 100%;
 }

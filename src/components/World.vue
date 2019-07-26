@@ -134,7 +134,7 @@ export default {
 
 
         var obj = ['中国','印度','美国','德国']
-        var jinweidu = [[80.5, 50.48, 39.64], [46.13, 30.3], [-110.5, 50.48], [-23.13, 63.3]]
+        var jinweidu = [[85.5, 52.48, 39.64], [46.13, 30.3], [-110.5, 50.48], [-18.13, 63.3]]
         var count = [239583, 129436, 226345, 193745]
         var option = this.setData(obj[0],obj[1], jinweidu[0], jinweidu[1], count[0], count[1])
         this.myEchart.setOption(option)
@@ -162,7 +162,7 @@ export default {
           geo: {
             type: 'map',
             map: 'world',
-            zoom: 1.1,
+            zoom: 1.2,
             Z:5,
             // roam: true,
             top: '10%',
@@ -234,10 +234,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #world{
-  width: 920px;
-  height: 600px;
-  margin-left:64px;
+  width: 100%;
+  height: 700px;
   margin-top:85px;
+  /* margin-left:64px;
+  margin-top:85px; */
   /* border:1px solid black; */
 }
 </style>
