@@ -31,15 +31,7 @@ export default {
         console.log('请求地图数据',worldJson)
         let data =res.data.data
         console.log('数据得到',data)
-        let worldData = [];
-         
-        for(var i =0; i < data.length; i++){
-            let amount = data[i].amount;
-            let state = data[i].state;
-            worldData.push({
-              "name":state+" : "+amount
-            });
-        }
+        //下面是创建value数组
         let place=[];
         let add =[
          121.77,8.67,17.87,43.35,10.45,101.97,171.12,105.31,104.99,133.77,106.65,-0.26,138.25,53.84,78.96,114.17,116.39,-106.34,-95.71
@@ -49,6 +41,25 @@ export default {
         ] ; 
         for(var i=0;i<add.length;i++){
           place.push([add[i],pdd[i]])
+        }
+          //下面是创建data.name对象
+        let worldData = [];
+        for(var i =0; i < data.length; i++){
+            let amount = data[i].amount;
+            let state = data[i].state;
+            let pl = place[i]
+            worldData.push({
+              "name":state+" : "+amount,
+              "value":pl,
+            symbol: `image://${leftTopIcon}`,
+            symbolSize: [173, 80],
+            label: {
+                    show: true,
+                    position: [30, 10],
+                    color: '#fff',
+                    formatter: `{b}`
+                  }
+            });
         }
         console.log("经纬度",place)
         console.log("地图数组",worldData);
@@ -87,35 +98,37 @@ export default {
               //下两行代码转移到data去------
               // symbol: `image://${leftTopIcon}`,
               // symbolSize: [173, 80],
-              
-              data:[
-                {
-                  symbol: `image://${leftTopIcon}`,
-                  symbolSize: [173, 80],
-                  // name: '中国:187526',
-                  // value: [80.5, 45.9],
-                  name:this.worldData,
-                  value:this.place,
-                  label: {
-                    show: true,
-                    position: [30, 10],
-                    color: '#fff',
-                    formatter: `{b}`
-                  }
-                },
+              data:worldData
+              // data:[
+              //   {
+              //     symbol: `image://${leftTopIcon}`,
+              //     symbolSize: [173, 80],
+              //     name: '中国:187526',
+              //     value: [80.5, 45.9],
+              //     // name:worldData,
+              //     // value:place,
+              //     label: {
+              //       show: true,
+              //       position: [30, 10],
+              //       color: '#fff',
+              //       formatter: `{b}`
+              //     }
+              //   },
                 // {
                 //   symbol: `image://${rightBotIcon}`,
                 //   symbolSize: [173, 80],
                 //   name: '澳大利亚:1864',
                 //   value: [135.13, -18.3],
+                //   // name:worldData,
+                //   // value:place,
                 //   label: {
                 //     show: true,
                 //     position: ['30%', '72%'],
                 //     color: '#fff',
                 //     formatter: `{b}`
                 //   }
-                // }
-              ],   
+                // },
+              // ],   
             }
           ]
         };

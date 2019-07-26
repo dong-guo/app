@@ -28,7 +28,7 @@ export default{
             this.$axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/brand/sales/proportion')
             .then(res => {
                 let data = res.data.data
-                console.log(data)
+                console.log(111,data)
                 var seriesData=[];
                 for (var i=0;i<data.length;i++){
                     let am = data[i].brand
