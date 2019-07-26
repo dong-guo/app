@@ -138,7 +138,7 @@ export default {
         var count = [239583, 129436, 226345, 193745]
         var option = this.setData(obj[0],obj[1], jinweidu[0], jinweidu[1], count[0], count[1])
         this.myEchart.setOption(option)
-        var len = obj.length
+        var len = worldData.length
         var i = 0
          this.timer = setInterval(() => {
            i += 2
@@ -162,11 +162,12 @@ export default {
           geo: {
             type: 'map',
             map: 'world',
-            zoom: 1,
+            zoom: 1.1,
+            Z:5,
             // roam: true,
-            top: 0,
-            left: 0,
-            right: 0,
+            top: '10%',
+            left: '10%',
+            right: '10%',
             itemStyle:{
               areaColor:'rgba(32,63,158,1)',
               borderWidth:0,
@@ -180,6 +181,11 @@ export default {
                 color:'white',
               }
             }
+          },
+          grid:{
+            left:'1%',
+            rgiht:'1%',
+            top:'12%',
           },
           series: [
             {
@@ -232,5 +238,6 @@ export default {
   height: 600px;
   margin-left:64px;
   margin-top:85px;
+  /* border:1px solid black; */
 }
 </style>

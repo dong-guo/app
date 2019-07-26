@@ -6,19 +6,20 @@
      <div id="skip-mid" class="rank">
          <div id="center">
              <h1>累计销售业绩</h1>
-             <ul>
-                 <li class="oneBox">2</li>
-                 <li class="minBox">3</li>
-                 <li class="minBox">3</li>
+             <!-- <ul>
+                 <li class="oneBox"><skipMid></skipMid></li>
+                 <li class="minBox"></li>
+                 <li class="minBox"></li>
                  <li class="space">,</li>
                  <li class="minBox">4</li>
                  <li class="minBox">5</li>
                  <li class="minBox">6</li>
                  <li class="space">,</li>
-                 <li class="minBox">7</li>
-                 <li class="minBox">8</li>
-                 <li class="minBox">9</li>
-             </ul>
+                 <li class="minBox"></li>
+                 <li class="minBox"></li>
+                 <li class="minBox"></li>
+             </ul> -->
+             <skipMid></skipMid>
              <World />
              <!-- <div class="picLeft">
                 <p class="picLeft-page">

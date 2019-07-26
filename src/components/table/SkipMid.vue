@@ -1,5 +1,19 @@
 <template>
          <div id="skipMid">
+             <ul>
+                 <li class="oneBox">{{page1()}}</li>
+                 <li class="minBox">{{page2()}}</li>
+                 <li class="minBox">{{page3()}}</li>
+                 <li class="space">,</li>
+                 <li class="minBox">{{page4()}}</li>
+                 <li class="minBox">{{page5()}}</li>
+                 <li class="minBox">{{page6()}}</li>
+                 <li class="space">,</li>
+                 <li class="minBox">{{page7()}}</li>
+                 <li class="minBox">{{page8()}}</li>
+                 <li class="minBox">{{page9()}}</li>
+                 <li class="minBox">{{page10()}}</li>
+             </ul>
          </div>      
 </template>
 
