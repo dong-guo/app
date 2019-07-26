@@ -18,13 +18,8 @@
                  <li class="minBox"></li>
                  <li class="minBox"></li>
                  <li class="minBox"></li>
-<<<<<<< HEAD
              </ul>
-             <skipMid></skipMid>
-=======
-             </ul> -->
              <!-- <skipMid></skipMid> -->
->>>>>>> 41ae7f27c686e4fedc353369d3f8b5684054fbbb
              <World />
              <!-- <div class="picLeft">
                 <p class="picLeft-page">

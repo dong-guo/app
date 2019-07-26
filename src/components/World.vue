@@ -236,7 +236,7 @@ export default {
 #world{
   width: 100%;
   height: 700px;
-  margin-top:85px;
+  margin-top:25px;
   /* margin-left:64px;
   margin-top:85px; */
   /* border:1px solid black; */
