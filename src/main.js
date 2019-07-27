@@ -17,11 +17,11 @@ Vue.prototype.$axios = axios;
 const router = new VueRouter({
   routes:[
     // {path:"/",component:Home},
-    {path:"/",component:HelloWorld},
+    {path:"/",component:Skip},
     {path:"/Skip",component:Skip},
     {path:"/Home",component:Home}
-  ],
-  mode:"history"
+  ]
+  // mode:"history"
 })
 
 
