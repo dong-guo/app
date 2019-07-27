@@ -7,21 +7,23 @@
          <div id="center">
              <h1>累计销售业绩</h1>
              <ul>
-                 <!-- <li class="oneBox">page1</li>
-                 <li class="minBox">9</li>
-                 <li class="minBox">2</li>
-                 <li class="space">,</li>
-                 <li class="minBox">5</li>
-                 <li class="minBox">9</li>
+                <li
+                :class="`oneBox ${item == ',' ? 'number' : 'str'}`"
+                v-for="(item, index) in salesVal"
+                :key="`saleVal${index}`"
+                >{{item}}</li>
+                <!-- <li class="minBox">9</li>
+                <li class="minBox">2</li>
+                <li class="space">,</li>
+                <li class="minBox">5</li>
+                <li class="minBox">9</li>
                  <li class="minBox">3</li>
                  <li class="space">,</li>
                  <li class="minBox">2</li>
                  <li class="minBox">7</li>
                  <li class="minBox">0</li>
                  <li class="minBox">4</li> -->
-                 <li v-for="arr in arrs">{{arr()}}</li>
              </ul>
-             <!-- <skipMid></skipMid> -->
              <World />
          </div>
      </div>
@@ -77,7 +79,6 @@
 import LeftOn from '../components/table/LeftOn'
 import LeftUnder from '../components/table/LeftUnder'
 import World from '../components/World'
-// import SkipMid from '../components/table/SkipMid'
 // var echarts = require('echarts')
 import RightUnder from '../components/table/RightUnder'
 
@@ -86,34 +87,20 @@ var echarts = require('echarts')
 
 export default{
   name:'skip',
-  data(){
-            
-        
+  data() {
+    return {
+        salesVal: '11,223,445'
+    }  
   },
   methods:{
      getData(){
            this.$axios.get('https://mobiletest.derucci.net/consumer-admin/api/sales/v1/sales/performance')
            .then(res=>{
                let data =res.data.data;
+               this.salesVal = data.slice(0, data.length - 3)
             //    console.log(typeof(data));
-               data = data.replace(/,/g, "");
-               data = parseInt(data);
-               console.log(110,data);
-               let arrs = data.toString();
-               console.log(arrs)
-            //   let prr = arr.replace(/\d(?=(?:\d{1})+\b)/g,'$&,');
-            //    console.log(prr);
-            //    let page1 =arr[0];
-            //    let page2 =arr[1];
-            //    let page3 =arr[2];
-            //    let page4 =arr[3];
-            //    let page5 =arr[4];
-            //    let page6 =arr[5];
-            //    let page7 =arr[6];
-            //    let page8 =arr[7];
-            //    let page9 =arr[8];
-            //    let page10 =arr[9];
-            //    console.log(101,page6);
+            //    data = data.replace(/,/g, "");
+            //    data = parseInt(data);
            })
         return
        },
@@ -126,9 +113,7 @@ export default{
       "LeftUnder":LeftUnder,
       "World": World,
       "RightUnder":RightUnder,
-    //   "SkipMid":SkipMid
   }
- 
 }
 </script>
 
@@ -145,7 +130,6 @@ li{
  #skip-header{
     width:1920;
     height:107px;
-
     text-align:center;
     line-height:107px;
     background:url(../assets/images/title.png) no-repeat;
@@ -201,6 +185,10 @@ li{
     font-size:46px;
     line-height:73px;
     margin-right:14.5px;
+}
+.number{
+    border: none;
+    width: 10px;
 }
 .minBox{
     border:2px solid rgba(90,156,255,1);
@@ -390,4 +378,5 @@ html{
     padding:0 0;
     margin:0 0;
 }
+
 </style>
