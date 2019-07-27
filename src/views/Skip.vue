@@ -7,7 +7,7 @@
          <div id="center">
              <h1>累计销售业绩</h1>
              <ul>
-                 <li class="oneBox">1</li>
+                 <!-- <li class="oneBox">page1</li>
                  <li class="minBox">9</li>
                  <li class="minBox">2</li>
                  <li class="space">,</li>
@@ -18,7 +18,8 @@
                  <li class="minBox">2</li>
                  <li class="minBox">7</li>
                  <li class="minBox">0</li>
-                 <li class="minBox">4</li>
+                 <li class="minBox">4</li> -->
+                 <li v-for="arr in arrs">{{arr()}}</li>
              </ul>
              <!-- <skipMid></skipMid> -->
              <World />
@@ -98,22 +99,23 @@ export default{
                data = data.replace(/,/g, "");
                data = parseInt(data);
                console.log(110,data);
-               let arr = data.toString();
-              let prr = arr.replace(/\d(?=(?:\d{1})+\b)/g,'$&,');
-               console.log(prr);
-               let page1 =prr[0];
-               let page2 =prr[2];
-               let page3 =prr[4];
-               let page4 =prr[6];
-               let page5 =prr[8];
-               let page6 =prr[10];
-               let page7 =prr[12];
-               let page8 =prr[14];
-               let page9 =prr[16];
-               let page10 =prr[18];
-               console.log(101,page6);
+               let arrs = data.toString();
+               console.log(arrs)
+            //   let prr = arr.replace(/\d(?=(?:\d{1})+\b)/g,'$&,');
+            //    console.log(prr);
+            //    let page1 =arr[0];
+            //    let page2 =arr[1];
+            //    let page3 =arr[2];
+            //    let page4 =arr[3];
+            //    let page5 =arr[4];
+            //    let page6 =arr[5];
+            //    let page7 =arr[6];
+            //    let page8 =arr[7];
+            //    let page9 =arr[8];
+            //    let page10 =arr[9];
+            //    console.log(101,page6);
            })
-
+        return
        },
   },
   mounted(){
